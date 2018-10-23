@@ -5,6 +5,8 @@ layout: index
 [![npm](https://img.shields.io/npm/v/thumbjs.svg)](https://npmjs.org/package/thumbjs)
 [![npm](https://img.shields.io/npm/dm/thumbjs.svg)](https://npmjs.org/package/thumbjs)
 
+This project owes a great deal of debt to the rather unfortunately-named [NippleJS](https://github.com/yoannmoinet/nipplejs).
+
 # Table Of Contents
 
 <details>
