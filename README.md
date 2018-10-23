@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/v/thumbstick.svg)](https://npmjs.org/package/thumbstick)
 [![npm](https://img.shields.io/npm/dm/thumbstick.svg)](https://npmjs.org/package/thumbstick)
 
-This project owes a great deal of debt to the rather unfortunately-named [NippleJS](https://github.com/yoannmoinet/nipplejs).
+This project owes a great deal of debt to the rather unfortunately-named [NippleJS](https://github.com/yoannmoinet/nipplejs). For now this project is basically a straight fork, which I intend to keep up-to-date with upstream. That may eventually change.
 
 # Table Of Contents
 
