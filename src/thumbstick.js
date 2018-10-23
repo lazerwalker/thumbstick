@@ -75,7 +75,7 @@ Thumb.prototype.buildEl = function (options) {
     this.ui.back = document.createElement('div');
     this.ui.front = document.createElement('div');
 
-    this.ui.el.className = 'thumb collection_' + this.collection.id;
+    this.ui.el.className = 'thumbstick collection_' + this.collection.id;
     this.ui.back.className = 'back';
     this.ui.front.className = 'front';
 
@@ -167,7 +167,7 @@ Thumb.prototype.removeFromDom = function () {
     return this;
 };
 
-// Entirely destroy this thumb
+// Entirely destroy this thumbstick
 Thumb.prototype.destroy = function () {
     clearTimeout(this.removeTimeout);
     clearTimeout(this.showTimeout);

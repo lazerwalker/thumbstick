@@ -13,5 +13,5 @@ var mkdirSync = function (path) {
 mkdirSync('./test/dist/');
 
 fs
-    .createReadStream('./dist/thumbjs.js')
-    .pipe(fs.createWriteStream('./test/dist/thumbjs.js'));
+    .createReadStream('./dist/thumbstick.js')
+    .pipe(fs.createWriteStream('./test/dist/thumbstick.js'));

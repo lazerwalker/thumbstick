@@ -316,7 +316,7 @@ Super.prototype.unbindEvt = function (el, type) {
 };
 
 ///////////////////////
-///   THE NIPPLE    ///
+///   THE THUMB    ///
 ///////////////////////
 
 function Thumb (collection, options) {

@@ -1,6 +1,6 @@
-# Thumbstick
-
-> A virtual joystick for touch capable interfaces
+---
+layout: index
+---
 
 [![npm](https://img.shields.io/npm/v/thumbstick.svg)](https://npmjs.org/package/thumbstick)
 [![npm](https://img.shields.io/npm/dm/thumbstick.svg)](https://npmjs.org/package/thumbstick)

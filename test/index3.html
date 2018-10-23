@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>ThumbJS</title>
-        <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5">
-        <style>
-        html, body {
+
+<head>
+    <meta charset="utf-8">
+    <title>Thumbstick</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5">
+    <style>
+        html,
+        body {
             position: absolute;
             top: 0;
             left: 0;
@@ -32,14 +34,15 @@
             width: 50%;
             background: rgba(0, 0, 255, 0.1);
         }
-        </style>
-    </head>
-    <body>
-        <div id="left"></div>
-        <div id="right"></div>
-        <script src="../dist/thumbjs.js" charset="utf-8"></script>
-        <script>
-        var joystickL = thumbjs.create({
+    </style>
+</head>
+
+<body>
+    <div id="left"></div>
+    <div id="right"></div>
+    <script src="../dist/thumbstick.js" charset="utf-8"></script>
+    <script>
+        var joystickL = thumbstick.create({
             zone: document.getElementById('left'),
             mode: 'static',
             position: { left: '20%', top: '50%' },
@@ -48,7 +51,7 @@
             lockX: true
         });
 
-        var joystickR = thumbjs.create({
+        var joystickR = thumbstick.create({
             zone: document.getElementById('right'),
             mode: 'static',
             position: { left: '80%', top: '50%' },
@@ -56,6 +59,7 @@
             size: 200,
             lockY: true
         });
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>

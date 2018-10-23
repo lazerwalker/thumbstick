@@ -21,9 +21,9 @@ function Manager (options) {
             var pos;
             var scroll = u.getScroll();
             self.collections.forEach(function (collection) {
-                collection.forEach(function (thumb) {
-                    pos = thumb.el.getBoundingClientRect();
-                    thumb.position = {
+                collection.forEach(function (thumbstick) {
+                    pos = thumbstick.el.getBoundingClientRect();
+                    thumbstick.position = {
                         x: scroll.x + pos.left,
                         y: scroll.y + pos.top
                     };
@@ -48,16 +48,16 @@ Manager.prototype.prepareCollections = function () {
     self.collections.off = self.off.bind(self);
     // Destroy everything
     self.collections.destroy = self.destroy.bind(self);
-    // Get any thumb
+    // Get any thumbstick
     self.collections.get = function (id) {
-        var thumb;
+        var thumbstick;
         self.collections.every(function (collection) {
-            if (thumb = collection.get(id)) {
+            if (thumbstick = collection.get(id)) {
                 return false;
             }
             return true;
         });
-        return thumb;
+        return thumbstick;
     };
 };
 
@@ -81,7 +81,7 @@ Manager.prototype.bindCollection = function (collection) {
     var type;
     // Bubble up identified events.
     var handler = function (evt, data) {
-        // Identify the event type with the thumb's identifier.
+        // Identify the event type with the thumbstick's identifier.
         type = evt.type + ' ' + data.id + ':' + evt.type;
         self.trigger(type, data);
     };

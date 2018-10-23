@@ -1,18 +1,18 @@
 {
     "version": "0.7.1",
-    "name": "thumbjs",
+    "name": "thumbstick",
     "description": "A virtual joystick for touch capable interfaces",
     "author": "Mike Lazer-Walker <hi@lazerwalker.com>",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/lazerwalker/thumbjs.git"
+        "url": "https://github.com/lazerwalker/thumbstick.git"
     },
     "bugs": {
-        "url": "https://github.com/lazerwalker/thumbjs/issues"
+        "url": "https://github.com/lazerwalker/thumbstick/issues"
     },
-    "homepage": "https://github.com/lazerwalker/thumbjs",
-    "main": "./dist/thumbjs.js",
+    "homepage": "https://github.com/lazerwalker/thumbstick",
+    "main": "./dist/thumbstick.js",
     "scripts": {
         "postversion": "npm run bowerSync && npm run changelog",
         "buildWatch": "npm run concat && npm run umd",
@@ -25,12 +25,12 @@
         "bowerSync": "node ./bin/bowerSync.js",
         "clean": "node ./bin/clean.js",
         "copyToTest": "node ./bin/copyToTest.js",
-        "uglify": "uglifyjs ./dist/thumbjs.js -o ./dist/thumbjs.min.js -c -m",
+        "uglify": "uglifyjs ./dist/thumbstick.js -o ./dist/thumbstick.min.js -c -m",
         "watch": "watch \"npm run buildWatch\" src",
         "start": "static test",
         "toc": "markdown-toc -i README.md",
         "copyGh": "node ./bin/copyToGhPages.js",
-        "concat": "concat-cli -f ./src/start.js ./src/utils.js ./src/super.js ./src/thumb.js ./src/collection.js ./src/manager.js ./src/end.js -o ./thumbjs.temp.js"
+        "concat": "concat-cli -f ./src/start.js ./src/utils.js ./src/super.js ./src/thumbstick.js ./src/collection.js ./src/manager.js ./src/end.js -o ./thumbstick.temp.js"
     },
     "dependencies": {},
     "devDependencies": {

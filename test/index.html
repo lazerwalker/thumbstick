@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ThumbJS</title>
+    <title>Thumbstick</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="http://lazerwalker.com/thumbjs/stylesheets/styles.css" media="screen" title="no title"
+    <link rel="stylesheet" href="http://yoannmoinet.github.io/nipplejs/stylesheets/styles.css" media="screen" title="no title"
         charset="utf-8">
-    <link rel="stylesheet" href="http://yoannmoinet.github.io/thumbjs/stylesheets/github-light.css" media="screen"
+    <link rel="stylesheet" href="http://yoannmoinet.github.io/nipplejs/stylesheets/github-light.css" media="screen"
         title="no title" charset="utf-8">
     <style>
         body {
@@ -117,9 +117,9 @@
     <p>First thing first. A demo. Executed with this configuration : </p>
     <div class="dynamic active highlight highlight-javascript">
         <pre>
-<span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./dist/thumbjs.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;/</span>script<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./dist/thumbstick.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;/</span>script<span class="pl-k">&gt;</span>
 <span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
-    <span class="pl-k">var</span> dynamic <span class="pl-k">=</span> thumbjs.create({
+    <span class="pl-k">var</span> dynamic <span class="pl-k">=</span> thumbstick.create({
         zone: document.getElementById('dynamic'),
         color: 'blue'
     });
@@ -127,9 +127,9 @@
     </div>
     <div class="semi highlight highlight-javascript">
         <pre>
-<span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./dist/thumbjs.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;/</span>script<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./dist/thumbstick.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;/</span>script<span class="pl-k">&gt;</span>
 <span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
-    <span class="pl-k">var</span> semi <span class="pl-k">=</span> thumbjs.create({
+    <span class="pl-k">var</span> semi <span class="pl-k">=</span> thumbstick.create({
         zone: document.getElementById('semi'),
         mode: 'semi',
         catchDistance: 150,
@@ -139,9 +139,9 @@
     </div>
     <div class="static highlight highlight-javascript">
         <pre>
-<span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./dist/thumbjs.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;/</span>script<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./dist/thumbstick.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;/</span>script<span class="pl-k">&gt;</span>
 <span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
-    <span class="pl-k">var</span> static <span class="pl-k">=</span> thumbjs.create({
+    <span class="pl-k">var</span> static <span class="pl-k">=</span> thumbstick.create({
         zone: document.getElementById('static'),
         mode: 'static',
         position: {left: '50%', top: '50%'},
@@ -200,7 +200,7 @@
     <div>
         <a href="https://codepen.io/YoannM/full/gapmMG" target="_blank">> Open the demo in a new window.</a>
     </div>
-    <script src="../dist/thumbjs.js" charset="utf-8"></script>
+    <script src="../dist/thumbstick.js" charset="utf-8"></script>
     <script>
         var s = function (sel) { return document.querySelector(sel); };
         var sId = function (sel) { return document.getElementById(sel); };
@@ -281,7 +281,7 @@
             s('.highlight.' + type).className += ' active';
             s('.button.' + type).className += ' active';
             s('.zone.' + type).className += ' active';
-            joystick = thumbjs.create(joysticks[type]);
+            joystick = thumbstick.create(joysticks[type]);
             bindThumb();
         }
 
