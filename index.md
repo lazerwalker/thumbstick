@@ -2,76 +2,77 @@
 layout: index
 ---
 
-[![npm](https://img.shields.io/npm/v/nipplejs.svg)](https://npmjs.org/package/nipplejs)
-[![CDNJS](https://img.shields.io/cdnjs/v/nipplejs.svg)](https://cdnjs.com/libraries/nipplejs)
-![Bower](https://img.shields.io/bower/v/nipplejs.svg)
-[![npm](https://img.shields.io/npm/dm/nipplejs.svg)](https://npmjs.org/package/nipplejs)
+[![npm](https://img.shields.io/npm/v/thumbjs.svg)](https://npmjs.org/package/thumbjs)
+[![CDNJS](https://img.shields.io/cdnjs/v/thumbjs.svg)](https://cdnjs.com/libraries/thumbjs)
+![Bower](https://img.shields.io/bower/v/thumbjs.svg)
+[![npm](https://img.shields.io/npm/dm/thumbjs.svg)](https://npmjs.org/package/thumbjs)
 
 # Table Of Contents
+
 <details>
 
 <!-- toc -->
 
-- [Install](#install)
-- [Demo](#demo)
-- [Usage](#usage)
-- [Options](#options)
-  * [`options.zone` defaults to 'body'](#optionszone-defaults-to-body)
-  * [`options.color` defaults to 'white'](#optionscolor-defaults-to-white)
-  * [`options.size` defaults to 100](#optionssize-defaults-to-100)
-  * [`options.threshold` defaults to 0.1](#optionsthreshold-defaults-to-01)
-  * [`options.fadeTime` defaults to 250](#optionsfadetime-defaults-to-250)
-  * [`options.multitouch` defaults to false](#optionsmultitouch-defaults-to-false)
-  * [`options.maxNumberOfNipples` defaults to 1](#optionsmaxnumberofnipples-defaults-to-1)
-  * [`options.dataOnly` defaults to false](#optionsdataonly-defaults-to-false)
-  * [`options.position` defaults to `{top: 0, left: 0}`](#optionsposition-defaults-to-top-0-left-0)
-  * [`options.mode` defaults to 'dynamic'.](#optionsmode-defaults-to-dynamic)
-    + [`'dynamic'`](#dynamic)
-    + [`'semi'`](#semi)
-    + [`'static'`](#static)
-  * [`options.restJoystick` defaults to true](#optionsrestjoystick-defaults-to-true)
-  * [`options.restOpacity` defaults to 0.5](#optionsrestopacity-defaults-to-05)
-  * [`options.catchDistance` defaults to 200](#optionscatchdistance-defaults-to-200)
-- [API](#api)
-  * [NippleJS instance (manager)](#nipplejs-instance-manager)
-    + [`manager.on(type, handler)`](#managerontype-handler)
-    + [`manager.off([type, handler])`](#managerofftype-handler)
-    + [`manager.get(identifier)`](#managergetidentifier)
-    + [`manager.destroy()`](#managerdestroy)
-    + [`manager.ids`](#managerids)
-    + [`manager.id`](#managerid)
-  * [nipple instance (joystick)](#nipple-instance-joystick)
-  * [`joystick.on`, `joystick.off`](#joystickon-joystickoff)
-  * [`joystick.el`](#joystickel)
-  * [`joystick.show([cb])`](#joystickshowcb)
-  * [`joystick.hide([cb])`](#joystickhidecb)
-  * [`joystick.add()`](#joystickadd)
-  * [`joystick.remove()`](#joystickremove)
-  * [`joystick.destroy()`](#joystickdestroy)
-  * [`joystick.identifier`](#joystickidentifier)
-  * [`joystick.trigger(type [, data])`](#joysticktriggertype--data)
-  * [`joystick.position`](#joystickposition)
-  * [`joystick.frontPosition`](#joystickfrontposition)
-  * [`joystick.ui`](#joystickui)
-- [Events](#events)
-  * [manager only](#manager-only)
-    + [`added`](#added)
-    + [`removed`](#removed)
-  * [manager and joysticks](#manager-and-joysticks)
-    + [`start`](#start)
-    + [`end`](#end)
-    + [`move`](#move)
-    + [`dir`](#dir)
-    + [`plain`](#plain)
-    + [`shown`](#shown)
-    + [`hidden`](#hidden)
-    + [`destroyed`](#destroyed)
-    + [`pressure`](#pressure)
-- [Contributing](#contributing)
-    + [Commits](#commits)
-    + [Style](#style)
-    + [Workflow](#workflow)
-    + [Build](#build)
+-   [Install](#install)
+-   [Demo](#demo)
+-   [Usage](#usage)
+-   [Options](#options)
+    -   [`options.zone` defaults to 'body'](#optionszone-defaults-to-body)
+    -   [`options.color` defaults to 'white'](#optionscolor-defaults-to-white)
+    -   [`options.size` defaults to 100](#optionssize-defaults-to-100)
+    -   [`options.threshold` defaults to 0.1](#optionsthreshold-defaults-to-01)
+    -   [`options.fadeTime` defaults to 250](#optionsfadetime-defaults-to-250)
+    -   [`options.multitouch` defaults to false](#optionsmultitouch-defaults-to-false)
+    -   [`options.maxNumberOfThumbs` defaults to 1](#optionsmaxnumberofthumbs-defaults-to-1)
+    -   [`options.dataOnly` defaults to false](#optionsdataonly-defaults-to-false)
+    -   [`options.position` defaults to `{top: 0, left: 0}`](#optionsposition-defaults-to-top-0-left-0)
+    -   [`options.mode` defaults to 'dynamic'.](#optionsmode-defaults-to-dynamic)
+        -   [`'dynamic'`](#dynamic)
+        -   [`'semi'`](#semi)
+        -   [`'static'`](#static)
+    -   [`options.restJoystick` defaults to true](#optionsrestjoystick-defaults-to-true)
+    -   [`options.restOpacity` defaults to 0.5](#optionsrestopacity-defaults-to-05)
+    -   [`options.catchDistance` defaults to 200](#optionscatchdistance-defaults-to-200)
+-   [API](#api)
+    -   [ThumbJS instance (manager)](#thumbjs-instance-manager)
+        -   [`manager.on(type, handler)`](#managerontype-handler)
+        -   [`manager.off([type, handler])`](#managerofftype-handler)
+        -   [`manager.get(identifier)`](#managergetidentifier)
+        -   [`manager.destroy()`](#managerdestroy)
+        -   [`manager.ids`](#managerids)
+        -   [`manager.id`](#managerid)
+    -   [thumb instance (joystick)](#thumb-instance-joystick)
+    -   [`joystick.on`, `joystick.off`](#joystickon-joystickoff)
+    -   [`joystick.el`](#joystickel)
+    -   [`joystick.show([cb])`](#joystickshowcb)
+    -   [`joystick.hide([cb])`](#joystickhidecb)
+    -   [`joystick.add()`](#joystickadd)
+    -   [`joystick.remove()`](#joystickremove)
+    -   [`joystick.destroy()`](#joystickdestroy)
+    -   [`joystick.identifier`](#joystickidentifier)
+    -   [`joystick.trigger(type [, data])`](#joysticktriggertype--data)
+    -   [`joystick.position`](#joystickposition)
+    -   [`joystick.frontPosition`](#joystickfrontposition)
+    -   [`joystick.ui`](#joystickui)
+-   [Events](#events)
+    -   [manager only](#manager-only)
+        -   [`added`](#added)
+        -   [`removed`](#removed)
+    -   [manager and joysticks](#manager-and-joysticks)
+        -   [`start`](#start)
+        -   [`end`](#end)
+        -   [`move`](#move)
+        -   [`dir`](#dir)
+        -   [`plain`](#plain)
+        -   [`shown`](#shown)
+        -   [`hidden`](#hidden)
+        -   [`destroyed`](#destroyed)
+        -   [`pressure`](#pressure)
+-   [Contributing](#contributing)
+    -   [Commits](#commits)
+    -   [Style](#style)
+    -   [Workflow](#workflow)
+    -   [Build](#build)
 
 <!-- tocstop -->
 </details>
@@ -79,19 +80,20 @@ layout: index
 ## Install
 
 ```bash
-npm install nipplejs --save
+npm install thumbjs --save
 
 // OR
 
-bower install nipplejs --save
+bower install thumbjs --save
 ```
 
-----
+---
 
 ## Demo
-Check out the [demo here](http://yoannmoinet.github.io/nipplejs/#demo).
 
-----
+Check out the [demo here](http://lazerwalker.com/thumbjs/#demo).
+
+---
 
 ## Usage
 
@@ -99,64 +101,66 @@ Import it the way you want into your project :
 
 ```javascript
 // CommonJS
-var manager = require('nipplejs').create(options);
+var manager = require("thumbjs").create(options);
 ```
 
 ```javascript
 // AMD
-define(['nipplejs'], function (nipplejs) {
-    var manager = nipplejs.create(options);
+define(["thumbjs"], function(thumbjs) {
+    var manager = thumbjs.create(options);
 });
 ```
 
 ```html
 // Global
-<script src="./dist/nipplejs.min.js"></script>
+<script src="./dist/thumbjs.min.js"></script>
 <script>
-    var manager = nipplejs.create(options);
+    var manager = thumbjs.create(options);
 </script>
 ```
 
 **:warning: NB :warning:** Your joystick's container **has** to have its CSS `position` property set, either `absolute`, `relative`, `static`, ....
 
-----
+---
 
 ## Options
+
 You can configure your joystick in different ways :
 
 ```javascript
 var options = {
-    zone: Element,                  // active zone
+    zone: Element, // active zone
     color: String,
     size: Integer,
-    threshold: Float,               // before triggering a directional event
-    fadeTime: Integer,              // transition time
+    threshold: Float, // before triggering a directional event
+    fadeTime: Integer, // transition time
     multitouch: Boolean,
-    maxNumberOfNipples: Number,     // when multitouch, what is too many?
-    dataOnly: Boolean,              // no dom element whatsoever
-    position: Object,               // preset position for 'static' mode
-    mode: String,                   // 'dynamic', 'static' or 'semi'
+    maxNumberOfThumbs: Number, // when multitouch, what is too many?
+    dataOnly: Boolean, // no dom element whatsoever
+    position: Object, // preset position for 'static' mode
+    mode: String, // 'dynamic', 'static' or 'semi'
     restJoystick: Boolean,
-    restOpacity: Number,            // opacity when not 'dynamic' and rested
-    catchDistance: Number           // distance to recycle previous joystick in
-                                    // 'semi' mode
+    restOpacity: Number, // opacity when not 'dynamic' and rested
+    catchDistance: Number // distance to recycle previous joystick in
+    // 'semi' mode
 };
 ```
 
 All options are optional :sunglasses:.
 
 ### `options.zone` defaults to 'body'
+
 The dom element in which all your joysticks will be injected.
 
 ```html
 <div id="zone_joystick"></div>
 
-<script type="text/javascript" src="./nipplejs.min.js"></script>
+<script type="text/javascript" src="./thumbjs.min.js"></script>
 <script type="text/javascript">
     var options = {
         zone: document.getElementById('zone_joystick');
     };
-    var manager = nipplejs.create(options);
+    var manager = thumbjs.create(options);
 </script>
 ```
 
@@ -165,16 +169,19 @@ This zone also serve as the mouse/touch events handler.
 It represents the zone where all your joysticks will be active.
 
 ### `options.color` defaults to 'white'
+
 The background color of your joystick's elements.
 
 Can be any valid CSS color.
 
 ### `options.size` defaults to 100
+
 The size in pixel of the outer circle.
 
 The inner circle is 50% of this size.
 
 ### `options.threshold` defaults to 0.1
+
 This is the strength needed to trigger a directional event.
 
 Basically, the center is 0 and the outer is 1.
@@ -182,26 +189,31 @@ Basically, the center is 0 and the outer is 1.
 You need to at least go to 0.1 to trigger a directional event.
 
 ### `options.fadeTime` defaults to 250
+
 The time it takes for joystick to fade-out and fade-in when activated or de-activated.
 
 ### `options.multitouch` defaults to false
+
 Enable the multitouch capabilities.
 
-If, for reasons, you need to have multiple nipples into the same zone.
+If, for reasons, you need to have multiple thumbs into the same zone.
 
 Otherwise it will only get one, and all new touches won't do a thing.
 
 Please note that multitouch is off when in `static` or `semi` modes.
 
-### `options.maxNumberOfNipples` defaults to 1
+### `options.maxNumberOfThumbs` defaults to 1
+
 If you need to, you can also control the maximum number of instance that could be created.
 
 Obviously in a multitouch configuration.
 
 ### `options.dataOnly` defaults to false
+
 The library won't draw anything in the DOM and will only trigger events with data.
 
 ### `options.position` defaults to `{top: 0, left: 0}`
+
 An object that will determine the position of a `static` mode.
 
 You can pass any of the four `top`, `right`, `bottom` and `left`.
@@ -209,54 +221,63 @@ You can pass any of the four `top`, `right`, `bottom` and `left`.
 They will be applied as any css property.
 
 Ex :
-- `{top: '50px', left: '50px'}`
-- `{left: '10%', bottom: '10%'}`
+
+-   `{top: '50px', left: '50px'}`
+-   `{left: '10%', bottom: '10%'}`
 
 ### `options.mode` defaults to 'dynamic'.
+
 Three modes are possible :
 
 #### `'dynamic'`
-- a new joystick is created at each new touch.
-- the joystick gets destroyed when released.
-- **can** be multitouch.
+
+-   a new joystick is created at each new touch.
+-   the joystick gets destroyed when released.
+-   **can** be multitouch.
 
 #### `'semi'`
-- new joystick is created at each new touch farther than `options.catchDistance` of any previously created joystick.
-- the joystick is faded-out when released but not destroyed.
-- when touch is made **inside** the `options.catchDistance` a new direction is triggered immediately.
-- when touch is made **oustide** the `options.catchDistance` the previous joystick is destroyed and a new one is created.
-- **cannot** be multitouch.
+
+-   new joystick is created at each new touch farther than `options.catchDistance` of any previously created joystick.
+-   the joystick is faded-out when released but not destroyed.
+-   when touch is made **inside** the `options.catchDistance` a new direction is triggered immediately.
+-   when touch is made **oustide** the `options.catchDistance` the previous joystick is destroyed and a new one is created.
+-   **cannot** be multitouch.
 
 #### `'static'`
-- a joystick is positionned immediately at `options.position`.
-- one joystick per zone.
-- each new touch triggers a new direction.
-- **cannot** be multitouch.
+
+-   a joystick is positionned immediately at `options.position`.
+-   one joystick per zone.
+-   each new touch triggers a new direction.
+-   **cannot** be multitouch.
 
 ### `options.restJoystick` defaults to true
+
 Reset the joystick's position when it enters the rest state.
 
 ### `options.restOpacity` defaults to 0.5
+
 The opacity to apply when the joystick is in a rest position.
 
 ### `options.catchDistance` defaults to 200
+
 This is only useful in the `semi` mode, and determine at which distance we recycle the previous joystick.
 
 At 200 (px), if you press the zone into a rayon of 200px around the previously displayed joystick,
 it will act as a `static` one.
 
 ### `options.lockX` defaults to false
+
 Locks joystick's movement to the x (horizontal) axis
 
 ### `options.lockY` defaults to false
+
 Locks joystick's movement to the y (vertical) axis
 
-
-----
+---
 
 ## API
 
-### NippleJS instance (manager)
+### ThumbJS instance (manager)
 
 Your manager has the following signature :
 
@@ -271,7 +292,7 @@ Your manager has the following signature :
     options: {
         zone: Element,                  // reactive zone
         multitouch: Boolean,
-        maxNumberOfNipples: Number,
+        maxNumberOfThumbs: Number,
         mode: String,
         position: Object,
         catchDistance: Number,
@@ -291,7 +312,7 @@ Your manager has the following signature :
 If you whish to listen to internal events like :
 
 ```javascript
-manager.on('event#1 event#2', function (evt, data) {
+manager.on("event#1 event#2", function(evt, data) {
     // Do something.
 });
 ```
@@ -304,7 +325,7 @@ them either with a space or a comma (or both, I don't care).
 To remove an event handler :
 
 ```javascript
-manager.off('event', handler);
+manager.off("event", handler);
 ```
 
 If you call off without arguments, all handlers will be removed.
@@ -316,13 +337,13 @@ If you don't specify the handler but just a type, all handlers for that type wil
 An helper to get an instance via its identifier.
 
 ```javascript
-// Will return the nipple instanciated by the touch identified by 0
+// Will return the thumb instanciated by the touch identified by 0
 manager.get(0);
 ```
 
 #### `manager.destroy()`
 
-Gently remove all nipples from the DOM and unbind all events.
+Gently remove all thumbs from the DOM and unbind all events.
 
 ```javascript
 manager.destroy();
@@ -330,13 +351,13 @@ manager.destroy();
 
 #### `manager.ids`
 
-The array of nipples' ids under this manager.
+The array of thumbs' ids under this manager.
 
 #### `manager.id`
 
 The incremented id of this manager.
 
-### nipple instance (joystick)
+### thumb instance (joystick)
 
 Each joystick has the following signature :
 
@@ -383,7 +404,7 @@ The same as the manager.
 Dom element in which the joystick gets created.
 
 ```html
-<div class="nipple">
+<div class="thumb">
     <div class="front"></div>
     <div class="back"></div>
 </div>
@@ -411,7 +432,7 @@ Remove the joystick's element from the dom.
 
 ### `joystick.destroy()`
 
-Gently remove this nipple from the DOM and unbind all related events.
+Gently remove this thumb from the DOM and unbind all related events.
 
 ### `joystick.identifier`
 
@@ -439,13 +460,13 @@ The object that store its ui elements
 
 ```html
 {
-    el: <div class="nipple"></div>
+    el: <div class="thumb"></div>
     back: <div class="back"></div>
     front: <div class="front"></div>
 }
 ```
 
-----
+---
 
 ## Events
 
@@ -456,13 +477,15 @@ But some of them are specific to its instance.
 If you need to listen to each joystick, for example, you can :
 
 ```javascript
-manager.on('added', function (evt, nipple) {
-    nipple.on('start move end dir plain', function (evt) {
-        // DO EVERYTHING
+manager
+    .on("added", function(evt, thumb) {
+        thumb.on("start move end dir plain", function(evt) {
+            // DO EVERYTHING
+        });
+    })
+    .on("removed", function(evt, thumb) {
+        thumb.off("start move end dir plain");
     });
-}).on('removed', function (evt, nipple) {
-    nipple.off('start move end dir plain');
-});
 ```
 
 ### manager only
@@ -525,7 +548,7 @@ Comes with data :
         radian: 1.5707963268,   // angle in radian
         degree: 90
     },
-    instance: Nipple            // the nipple instance that triggered the event
+    instance: Thumb            // the thumb instance that triggered the event
 }
 ```
 
@@ -545,10 +568,10 @@ Direction are split with a 45° angle.
 
 You can also listen to specific direction like :
 
-- `dir:up`
-- `dir:down`
-- `dir:right`
-- `dir:left`
+-   `dir:up`
+-   `dir:down`
+-   `dir:right`
+-   `dir:left`
 
 In this configuration only one direction is triggered at a time.
 
@@ -566,10 +589,10 @@ Plain directions are split with a 90° angle.
 
 You can also listen to specific plain direction like :
 
-- `plain:up`
-- `plain:down`
-- `plain:right`
-- `plain:left`
+-   `plain:up`
+-   `plain:down`
+-   `plain:right`
+-   `plain:left`
 
 In this configuration two directions can be triggered at a time,
 because the user could be both `up` and `left` for example.
@@ -604,17 +627,20 @@ Is triggered when the pressure on the joystick is changed.
 
 The value, between 0 and 1, is sent back alongside the event.
 
-----
+---
 
 ## Contributing
+
 Your help is more than welcome, I would be very honored to have you on my side.
 
 Here are some very basic guidelines.
 
 #### Commits
+
 Please follow these [guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit) so your commits will be taken by the self-generated changelog.
 
 #### Style
+
 There are both [JSCS](http://jscs.info/) and [ESLint](http://eslint.org/) in the project.
 
 To test your code against them simply run `npm run prebuild`.
@@ -622,14 +648,16 @@ To test your code against them simply run `npm run prebuild`.
 We follow a **4 spaces** rule around here.
 
 #### Workflow
+
 You can use the available scripts if needed.
 
-- `npm run watch` will run the build each time a change is detected.
-- `npm run formatAndLint` will test the formatting and the linting of your code.
-- `npm start` will run a static server that will serve the [`test/`](./test) folder on [`localhost:8080`](http://localhost:8080).
-- `npm test` will test using CasperJS, you have to run `npm start` in another window to have a local server available to CasperJS.
+-   `npm run watch` will run the build each time a change is detected.
+-   `npm run formatAndLint` will test the formatting and the linting of your code.
+-   `npm start` will run a static server that will serve the [`test/`](./test) folder on [`localhost:8080`](http://localhost:8080).
+-   `npm test` will test using CasperJS, you have to run `npm start` in another window to have a local server available to CasperJS.
 
 #### Build
+
 Once you're satisfied with your changes, you can also include a build.
 
 1. `npm run build` to generate built files.
