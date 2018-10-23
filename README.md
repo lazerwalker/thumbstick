@@ -3,8 +3,6 @@
 > A virtual joystick for touch capable interfaces
 
 [![npm](https://img.shields.io/npm/v/thumbjs.svg)](https://npmjs.org/package/thumbjs)
-[![CDNJS](https://img.shields.io/cdnjs/v/thumbjs.svg)](https://cdnjs.com/libraries/thumbjs)
-![Bower](https://img.shields.io/bower/v/thumbjs.svg)
 [![npm](https://img.shields.io/npm/dm/thumbjs.svg)](https://npmjs.org/package/thumbjs)
 
 # Table Of Contents
