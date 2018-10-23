@@ -1,5 +1,5 @@
 {
-    "version": "0.8.1",
+    "version": "0.8.2",
     "name": "thumbstick",
     "description": "A virtual joystick for touch capable interfaces",
     "author": "Mike Lazer-Walker <hi@lazerwalker.com>",

@@ -1,3 +1,15 @@
+<a name="0.8.2"></a>
+
+## [0.8.1](https://github.com/lazerwalker/thumbstick/compare/v0.8.1...v0.8.2) (2018-10-23)
+
+-   Remove some unused dependencies that also contain security vulnerabilities.
+
+<a name="0.8.1"></a>
+
+## [0.8.1](https://github.com/lazerwalker/thumbstick/compare/v0.7.1...v0.8.1) (2018-10-23)
+
+-   Rename the library to "thumbstick"
+
 <a name="0.7.1"></a>
 
 ## [0.7.1](https://github.com/lazerwalker/thumbstick/compare/v0.7.0...v0.7.1) (2018-06-06)
