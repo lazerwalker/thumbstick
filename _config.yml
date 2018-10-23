@@ -1,4 +1,4 @@
 markdown: kramdown
-path: //lazerwalker.com/thumbjs
+path: //lazerwalker.com/thumbstick
 gems:
   - jemoji
