@@ -2,8 +2,8 @@
 layout: index
 ---
 
-[![npm](https://img.shields.io/npm/v/thumbjs.svg)](https://npmjs.org/package/thumbjs)
-[![npm](https://img.shields.io/npm/dm/thumbjs.svg)](https://npmjs.org/package/thumbjs)
+[![npm](https://img.shields.io/npm/v/thumbstick.svg)](https://npmjs.org/package/thumbstick)
+[![npm](https://img.shields.io/npm/dm/thumbstick.svg)](https://npmjs.org/package/thumbstick)
 
 This project owes a great deal of debt to the rather unfortunately-named [NippleJS](https://github.com/yoannmoinet/nipplejs).
 
@@ -34,14 +34,14 @@ This project owes a great deal of debt to the rather unfortunately-named [Nipple
     -   [`options.restOpacity` defaults to 0.5](#optionsrestopacity-defaults-to-05)
     -   [`options.catchDistance` defaults to 200](#optionscatchdistance-defaults-to-200)
 -   [API](#api)
-    -   [ThumbJS instance (manager)](#thumbjs-instance-manager)
+    -   [Thumbstick instance (manager)](#thumbstick-instance-manager)
         -   [`manager.on(type, handler)`](#managerontype-handler)
         -   [`manager.off([type, handler])`](#managerofftype-handler)
         -   [`manager.get(identifier)`](#managergetidentifier)
         -   [`manager.destroy()`](#managerdestroy)
         -   [`manager.ids`](#managerids)
         -   [`manager.id`](#managerid)
-    -   [thumb instance (joystick)](#thumb-instance-joystick)
+    -   [thumbstick instance (joystick)](#thumbstick-instance-joystick)
     -   [`joystick.on`, `joystick.off`](#joystickon-joystickoff)
     -   [`joystick.el`](#joystickel)
     -   [`joystick.show([cb])`](#joystickshowcb)
@@ -80,18 +80,18 @@ This project owes a great deal of debt to the rather unfortunately-named [Nipple
 ## Install
 
 ```bash
-npm install thumbjs --save
+npm install thumbstick --save
 
 // OR
 
-bower install thumbjs --save
+bower install thumbstick --save
 ```
 
 ---
 
 ## Demo
 
-Check out the [demo here](http://lazerwalker.com/thumbjs/#demo).
+Check out the [demo here](http://lazerwalker.com/thumbstick/#demo).
 
 ---
 
@@ -101,21 +101,21 @@ Import it the way you want into your project :
 
 ```javascript
 // CommonJS
-var manager = require("thumbjs").create(options);
+var manager = require("thumbstick").create(options);
 ```
 
 ```javascript
 // AMD
-define(["thumbjs"], function(thumbjs) {
-    var manager = thumbjs.create(options);
+define(["thumbstick"], function(thumbstick) {
+    var manager = thumbstick.create(options);
 });
 ```
 
 ```html
 // Global
-<script src="./dist/thumbjs.min.js"></script>
+<script src="./dist/thumbstick.min.js"></script>
 <script>
-    var manager = thumbjs.create(options);
+    var manager = thumbstick.create(options);
 </script>
 ```
 
@@ -155,12 +155,12 @@ The dom element in which all your joysticks will be injected.
 ```html
 <div id="zone_joystick"></div>
 
-<script type="text/javascript" src="./thumbjs.min.js"></script>
+<script type="text/javascript" src="./thumbstick.min.js"></script>
 <script type="text/javascript">
     var options = {
         zone: document.getElementById('zone_joystick');
     };
-    var manager = thumbjs.create(options);
+    var manager = thumbstick.create(options);
 </script>
 ```
 
@@ -277,7 +277,7 @@ Locks joystick's movement to the y (vertical) axis
 
 ## API
 
-### ThumbJS instance (manager)
+### Thumbstick instance (manager)
 
 Your manager has the following signature :
 
@@ -337,7 +337,7 @@ If you don't specify the handler but just a type, all handlers for that type wil
 An helper to get an instance via its identifier.
 
 ```javascript
-// Will return the thumb instanciated by the touch identified by 0
+// Will return the thumbstick instanciated by the touch identified by 0
 manager.get(0);
 ```
 
@@ -357,7 +357,7 @@ The array of thumbs' ids under this manager.
 
 The incremented id of this manager.
 
-### thumb instance (joystick)
+### thumbstick instance (joystick)
 
 Each joystick has the following signature :
 
@@ -404,7 +404,7 @@ The same as the manager.
 Dom element in which the joystick gets created.
 
 ```html
-<div class="thumb">
+<div class="thumbstick">
     <div class="front"></div>
     <div class="back"></div>
 </div>
@@ -432,7 +432,7 @@ Remove the joystick's element from the dom.
 
 ### `joystick.destroy()`
 
-Gently remove this thumb from the DOM and unbind all related events.
+Gently remove this thumbstick from the DOM and unbind all related events.
 
 ### `joystick.identifier`
 
@@ -460,7 +460,7 @@ The object that store its ui elements
 
 ```html
 {
-    el: <div class="thumb"></div>
+    el: <div class="thumbstick"></div>
     back: <div class="back"></div>
     front: <div class="front"></div>
 }
@@ -478,13 +478,13 @@ If you need to listen to each joystick, for example, you can :
 
 ```javascript
 manager
-    .on("added", function(evt, thumb) {
-        thumb.on("start move end dir plain", function(evt) {
+    .on("added", function(evt, thumbstick) {
+        thumbstick.on("start move end dir plain", function(evt) {
             // DO EVERYTHING
         });
     })
-    .on("removed", function(evt, thumb) {
-        thumb.off("start move end dir plain");
+    .on("removed", function(evt, thumbstick) {
+        thumbstick.off("start move end dir plain");
     });
 ```
 
@@ -548,7 +548,7 @@ Comes with data :
         radian: 1.5707963268,   // angle in radian
         degree: 90
     },
-    instance: Thumb            // the thumb instance that triggered the event
+    instance: Thumb            // the thumbstick instance that triggered the event
 }
 ```
 
