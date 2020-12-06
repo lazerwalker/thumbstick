@@ -621,7 +621,7 @@ Will pass the instance alongside the event.
 
 #### `pressure`
 
-> MBP's [**Force Touch**](http://www.apple.com/macbook-pro/features-retina/#interact), iOS's [**3D Touch**](http://www.apple.com/iphone-6s/3d-touch/), Microsoft's [**pressure**](https://msdn.microsoft.com/en-us/library/hh772360%28v=vs.85%29.aspx) or MDN's [**force**](https://developer.mozilla.org/en-US/docs/Web/API/Touch/force)
+> MBP's [**Force Touch**](http://www.apple.com/macbook-pro/features-retina/#interact), iOS's [**3D Touch**](http://www.apple.com/iphone-6s/3d-touch/), Microsoft's [**pressure**](https://msdn.microsoft.com/library/hh772360%28v=vs.85%29.aspx?WT.mc_id=spatial-0000-emwalker) or MDN's [**force**](https://developer.mozilla.org/en-US/docs/Web/API/Touch/force)
 
 Is triggered when the pressure on the joystick is changed.
 
